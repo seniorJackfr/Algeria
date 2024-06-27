@@ -1,3 +1,8 @@
+body {
+    background-color: green;
+    border-radius: 12px;
+    padding: 12px;
+}
 div {
     border-color: #616161;
     border-width: 1px;
@@ -6,6 +11,7 @@ div {
     padding: 10px;
     direction: row;
     align-items: center;
+
     gap: 10;
 }
 
@@ -15,6 +21,7 @@ h1 {
 }
 
 p {
+    color:antiquewhite;
     font-size: 16px;
     line-height: 1.5;
     font-family: Iosevka;
@@ -42,6 +49,7 @@ a {
     overline-color: #ff0000;
     strikethrough: true;
     strikethrough-color: #ff0000;
+
     margin-right: 50px;
 }
 
@@ -50,7 +58,7 @@ ul, ol {
 }
 
 ok {
-    color: #FF3232;
+    color: red;
 }
 
 select {
@@ -59,6 +67,7 @@ select {
     border-style: solid;
     border-color: #ccc;
     border-radius: 3px;
+
     margin-left: 40px;
 }
 
