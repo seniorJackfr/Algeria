@@ -1,25 +1,38 @@
--- first, we get
-local test = get("myclass")
+local btn = get("startbtn")
 
--- now, we set
-test.set_opacity(0.75)
-test.set_contents("This text will be set as the content of the element")
+print(btn.get_content())
+btn.set_content("Hello, World!")
+print(btn.get_content())
 
--- example: get an anchor and set it's href to the Dingle search engine and its text content to "Search with Dingle"
-get("a").set_href("buss://dingle.it")
-get("a").set_contents("Search with Dingle")
-local test = get("mybutton")
+local ok = set_timeout(function()
+	btn.set_content("ok")
+end, 5000)
 
--- now, we do stuff when it gets clicked
-test.on_click(function()
-    test.set_contents("i was clicked!")
+btn.on_click(function()
+    print("clicked!")
 end)
 
--- a slightly more complex example:
+get("input").on_submit(function(content)
+    print(content)
+end)
 
-local input = get("input") -- will get an <input> item
-local h1 = get("h1")
+get("input").on_input(function(content)
+    print(content)
+end)
 
-input.on_submit(function()
-    h1.set_contents("your input was: " + input.get_contents())
-)
+get("textarea").on_input(function(content)
+    print(content)
+end)
+
+-- get("futurelink").set_href("https://www.duckduckgo.com/")
+
+coroutine.wrap(function()
+	local res = fetch({
+		url = "http://127.0.0.1:3000/",
+		method = "POST",
+		headers = { ["Content-Type"] = "application/json" },
+		body = '{ "test": 3 }',
+	})
+
+	print("hlelo", { hello = true })
+end)()
